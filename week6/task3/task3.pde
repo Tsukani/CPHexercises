@@ -25,7 +25,7 @@ void setup() {
 
 void draw() {
    time = millis();
-  //3 seconds interval
+  //3 second interval
   if (time > oldTime+3000) {
     fill(grey);
     if (!state) {
