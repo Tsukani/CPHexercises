@@ -1,5 +1,5 @@
 //7.a & 7.b
-int input =- 20;
+int input =-20;
 
 if (input>=0) {
   //Positive input
