@@ -24,18 +24,36 @@ class Enemy {
     int xDistance = player.x - x;
     int yDistance = player.y - y;
     // random chance (~25% chance) for at enemy flytter sig i en tilfældig retning.
-    
-    if (Math.abs(xDistance) > Math.abs(yDistance)) {
-      if (xDistance>0) {
-        this.moveRight();
-      } else if (xDistance<0) {
-        this.moveLeft();
+    int randomChance = (int)random(0,3);
+    if (randomChance == 0) {
+      int randomMovement = (int)random(0,3);
+      switch (randomMovement) {
+        case 0:
+          this.moveUp();
+          break;
+        case 1:
+          this.moveRight();
+          break;
+        case 2:
+          this.moveDown();
+          break;
+        case 3:
+          this.moveLeft();
+          break;
       }
     } else {
-      if (yDistance>0) {
-        this.moveDown();
-      } else if (yDistance<0) {
-        this.moveUp();
+      if (Math.abs(xDistance) > Math.abs(yDistance)) {
+        if (xDistance>0) {
+          this.moveRight();
+        } else if (xDistance<0) {
+          this.moveLeft();
+        }
+      } else {
+        if (yDistance>0) {
+          this.moveDown();
+        } else if (yDistance<0) {
+          this.moveUp();
+        }
       }
     }
   }
