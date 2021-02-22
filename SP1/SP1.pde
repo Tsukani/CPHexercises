@@ -11,9 +11,7 @@ int size = 10,
     oldTime;
 boolean gameOver = false; 
 
-//Objects
-
-  
+//Objects  
 Player player;
 //            Number of enemies
 Enemy enemy[] = new Enemy[3];
