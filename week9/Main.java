@@ -92,7 +92,7 @@ public class Main {
             System.out.println(word.substring(indexStart,indexStart+substringLength));
         } catch (StringIndexOutOfBoundsException e) {
             if (indexStart < word.length()) {
-                System.out.println(word.substring(indexStart,word.length()));
+                System.out.println(word.substring(indexStart));
             } else {
                 System.out.println(String.format("Error: Integer indexStart is greater than the provided word's length. [indexStart: %d | Word length: %d]\n" + e, indexStart, word.length()));
             }
