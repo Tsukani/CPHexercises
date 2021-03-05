@@ -21,7 +21,7 @@ public class Main {
 
         //test dine metoder ved at kalde dem her:
         printWordsWithDoubleConsonant();
-        printLongestSentence();
+        printLongestWord();
         printPartOfWord("Copenhagen", 1, 4);
         printPartOfWord("Java", 2, 10);
         printIfPalindrome("Racecar");
@@ -70,7 +70,7 @@ public class Main {
         }
     }
 
-    private static void printLongestSentence() throws FileNotFoundException {
+    private static void printLongestWord() throws FileNotFoundException {
         File file = new File("data.txt");
         scan = new Scanner(file);
         int i = 0;
