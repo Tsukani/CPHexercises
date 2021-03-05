@@ -1,7 +1,5 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -73,13 +71,12 @@ public class Main {
     }
 
     private static void printLongestSentence() throws FileNotFoundException {
-        String[] splitarray;
         File file = new File("data.txt");
         scan = new Scanner(file);
         int i = 0;
         String longestWord = "";
         while (scan.hasNextLine()) {
-            splitarray = scan.nextLine().split("\\. ");
+            scan.nextLine().split("\\. ");
             for (int j = 0; j < text[i].length; j++) { //words
                 if (text[i][j].length() > longestWord.length()) {
                     longestWord = text[i][j];
