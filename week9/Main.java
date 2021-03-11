@@ -1,7 +1,5 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -23,7 +21,7 @@ public class Main {
 
         //test dine metoder ved at kalde dem her:
         printWordsWithDoubleConsonant();
-        printLongestSentence();
+        printLongestWord();
         printPartOfWord("Copenhagen", 1, 4);
         printPartOfWord("Java", 2, 10);
         printIfPalindrome("Racecar");
@@ -63,8 +61,8 @@ public class Main {
         for (int i = 0; i < text.length; i++) { //array of lines
             for (int j = 0; j < text[i].length; j++) { //words
                 for (int k = 1; k < text[i][j].length(); k++) { //letters
-                        //Check if char is in array (https://stackoverflow.com/a/18581539)             Check if char at k is equal to char at k-1
-                    if (!(new String(nonConsonants).contains(String.valueOf(text[i][j].charAt(k)))) && text[i][j].charAt(k) == text[i][j].charAt(k-1)) {
+                        //Check if char is in array (https://stackoverflow.com/a/18581539)                           Check if char at k is equal to char at k-1
+                    if (!(new String(nonConsonants).contains(String.valueOf(text[i][j].toLowerCase().charAt(k)))) && text[i][j].toLowerCase().charAt(k) == text[i][j].toLowerCase().charAt(k-1)) {
                         System.out.println(String.format("Word contains double consonant (%c): %s", text[i][j].charAt(k), text[i][j]));
                     }
                 }
@@ -72,14 +70,13 @@ public class Main {
         }
     }
 
-    private static void printLongestSentence() throws FileNotFoundException {
-        String[] splitarray;
+    private static void printLongestWord() throws FileNotFoundException {
         File file = new File("data.txt");
         scan = new Scanner(file);
         int i = 0;
         String longestWord = "";
         while (scan.hasNextLine()) {
-            splitarray = scan.nextLine().split("\\. ");
+            scan.nextLine().split("\\. ");
             for (int j = 0; j < text[i].length; j++) { //words
                 if (text[i][j].length() > longestWord.length()) {
                     longestWord = text[i][j];
@@ -95,7 +92,7 @@ public class Main {
             System.out.println(word.substring(indexStart,indexStart+substringLength));
         } catch (StringIndexOutOfBoundsException e) {
             if (indexStart < word.length()) {
-                System.out.println(word.substring(indexStart,word.length()));
+                System.out.println(word.substring(indexStart));
             } else {
                 System.out.println(String.format("Error: Integer indexStart is greater than the provided word's length. [indexStart: %d | Word length: %d]\n" + e, indexStart, word.length()));
             }
