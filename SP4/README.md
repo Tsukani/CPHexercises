@@ -1,4 +1,4 @@
-### Table Football Tournament - SP3
+### Table Football Tournament - SP3 & SP4
 
 Automatic system to manage a tournament based around table football
 
